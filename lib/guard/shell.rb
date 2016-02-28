@@ -15,7 +15,7 @@ module Guard
 
     # Call #run_on_change for all files which match this guard.
     def run_all
-      run_on_modifications(Compat.matching_files(self, Dir.glob('{,**/}*{,.*}')))
+      run_on_modifications(Compat.matching_files(self, Dir.glob('{,**/}*{,.*}'))) unless options[:no_run_all]
     end
 
     # Print the result of the command(s), if there are results to be printed.
